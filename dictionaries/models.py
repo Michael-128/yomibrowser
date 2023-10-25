@@ -27,8 +27,5 @@ class Term(models.Model):
     
     dictionary = models.ForeignKey(Dictionary, null=False, on_delete=models.CASCADE)
 
-    class Meta:
-        unique_together = ("term", "reading", "tags", "ruleIdentifiers", "definitions")
-
     def __str__(self) -> str:
         return f"{self.term} ({self.reading}) - {self.definitions}"

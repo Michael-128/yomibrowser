@@ -48,7 +48,6 @@ def import_dictionary(dict_zip):
     dictionaryEntry = Dictionary(**dictionary["index"])
     dictionaryEntry.save()
 
-
     termEntries = list()
     for term in dictionary["term_bank"]:
         term[2] = term[2] + " " + term[-1]

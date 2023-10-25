@@ -1,5 +1,7 @@
 from django.db import models
 
+import json
+
 # Create your models here.
 class Dictionary(models.Model):
     title = models.CharField(null=False, unique=True, max_length=255)
@@ -23,6 +25,10 @@ class Term(models.Model):
     ruleIdentifiers = models.CharField(max_length=255)
     popularity = models.IntegerField()
     definitions = models.TextField() # JSON
+    @property
+    def separated_definitions(self):
+        return json.loads(self.definitions)
+
     sequence = models.IntegerField()
     
     dictionary = models.ForeignKey(Dictionary, null=False, on_delete=models.CASCADE)

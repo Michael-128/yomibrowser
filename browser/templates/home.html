@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="search-bar">
+        <form action="." method="get">
+            {% csrf_token %}
+            <input type="search" name="term" class="search-inp">
+            <button type="submit" class="search-btn">S</button>
+        </form>
+    </div>
+    <div class="terms">
+        results: {{terms|length}}
+
+        <ul>
+            {% for term in terms %}
+                <li>
+                    <ruby>
+                        {{term.term}} 
+                        <rt>{{term.reading}}</rt>
+                    </ruby>
+                    
+                    acc: {{term.accuracy}}
+                    pop: {{term.popularity}}
+
+                    <ol>
+                        {% for definition in term.separated_definitions  %}
+                            <li>
+                                {{definition}}
+                            </li>
+                        {% endfor %}
+                    </ol>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+{% endblock content %}

@@ -70,4 +70,17 @@ small {
   border-radius: 0.25rem;
 }
 
+.menu {
+  margin-bottom: 1rem;
+}
+.menu a {
+  color: lightgray;
+}
+
+.submit-btn {
+  background-color: #4d4d4d;
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+}
+
 /*# sourceMappingURL=home.css.map */

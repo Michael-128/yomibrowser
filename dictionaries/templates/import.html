@@ -1,36 +1,25 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <div class="search-bar">
-        <form action="." method="get">
-            {% csrf_token %}
-            <input type="search" value="{{keyword}}" placeholder="Search" name="term" class="search-inp">
-            <button type="submit" class="search-btn">S</button>
-        </form>
+    <div class="menu">
+        <a href="/">home</a>
+        <a href="/import">import</a>
     </div>
-    <div class="terms">
-        <p><small>{{terms|length}} results</small></p>
-            {% regroup terms by term as regrouped_terms %}
+    <div>
+        <form action="." method="POST">
+            {% csrf_token %}
+            <h2>Import Dictionary</h2>
+            <input type="file" name="" id="">
 
-            {% for term in regrouped_terms %}
-                <div class="term-card">
-                    <ruby>
-                        {{term.grouper}}
-                        <rt>{{term.list.0.reading}}</rt>
-                    </ruby>
-                    
-                    <ul>
-                        {% for term in term.list %}
-                            
-                            {% for definition in term.separated_definitions %}
-                                <li>
-                                    {{definition}}
-                                </li>
-                            {% endfor %}
-                            
-                        {% endfor %}
-                    </ul>
-                </div>
+            <button class="submit-btn">Submit</button>
+        </form>
+
+        <h2>Dictionaries</h2>
+
+        <ol>
+            {% for dictionary in dictionaries %}
+                <li>{{dictionary.title}}</li>
             {% endfor %}
+        </ol>
     </div>
 {% endblock content %}

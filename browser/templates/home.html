@@ -1,6 +1,10 @@
 {% extends "base.html" %}
 
 {% block content %}
+    <div class="menu">
+        <a href="/">home</a>
+        <a href="/import">import</a>
+    </div>
     <div class="search-bar">
         <form action="." method="get">
             {% csrf_token %}

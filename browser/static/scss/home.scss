@@ -83,3 +83,17 @@ small {
     padding: 1.5rem;
     border-radius: $small-size;
 }
+
+.menu {
+    margin-bottom: 1rem;
+
+    a {
+        color: lightgray;
+    }
+}
+
+.submit-btn {
+    background-color: darken(white, 70%);
+    padding: $med-size;
+    border-radius: $small-size;
+}

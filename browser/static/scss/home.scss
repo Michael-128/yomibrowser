@@ -19,6 +19,11 @@ body {
     background-color: $bg-color;
     display: flex;
     flex-direction: column;
+    margin-left: 15% !important;
+    margin-right: 15% !important;
+
+    margin-top: 2rem;
+    margin-bottom: 2rem;
 }
 
 * {
@@ -49,14 +54,16 @@ button {
     cursor: pointer;
 }
 
+small {
+    color: lightgray
+}
+
 .search-bar {
     background-color: lighten($bg-color, 10%);
     border: $border-size solid $border-color;
     border-radius: $small-size;
 
     font-size: x-large;
-
-    margin: $med-size;
 
     display: flex;
 }
@@ -67,4 +74,12 @@ button {
 
 .terms {
     font-size: x-large;
+}
+
+.term-card {
+    background-color: darken(white, 70%);
+    margin-bottom: 2rem;
+
+    padding: 1.5rem;
+    border-radius: 1rem;
 }

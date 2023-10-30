@@ -1,1 +1,1 @@
-py manage.py makemigrations && py manage.py migrate && py manage.py runserver 0.0.0.0:80
+python3 manage.py makemigrations && python3 manage.py migrate && python3 manage.py runserver 0.0.0.0:80

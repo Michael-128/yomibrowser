@@ -1,6 +1,8 @@
 from zipfile import ZipFile
 import json
 
+import base64
+
 from .models import Dictionary, Term
 
 
@@ -66,8 +68,6 @@ def import_dictionary(dict_zip):
         termEntries.append(termEntry)
 
     Term.objects.bulk_create(termEntries)
-    # Create new dictionary if it doesn't exist
     # Create new tags
-    # Create new terms
 
 

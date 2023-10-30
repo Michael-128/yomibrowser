@@ -10,6 +10,10 @@ body {
   background-color: #333333;
   display: flex;
   flex-direction: column;
+  margin-left: 15% !important;
+  margin-right: 15% !important;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
 }
 
 * {
@@ -39,12 +43,15 @@ button {
   cursor: pointer;
 }
 
+small {
+  color: lightgray;
+}
+
 .search-bar {
   background-color: #4d4d4d;
   border: 0.25rem solid gray;
   border-radius: 0.25rem;
   font-size: x-large;
-  margin: 0.5rem;
   display: flex;
 }
 
@@ -54,6 +61,13 @@ button {
 
 .terms {
   font-size: x-large;
+}
+
+.term-card {
+  background-color: #4d4d4d;
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  border-radius: 1rem;
 }
 
 /*# sourceMappingURL=home.css.map */

@@ -4,33 +4,33 @@
     <div class="search-bar">
         <form action="." method="get">
             {% csrf_token %}
-            <input type="search" name="term" class="search-inp">
+            <input type="search" value="{{keyword}}" placeholder="Search" name="term" class="search-inp">
             <button type="submit" class="search-btn">S</button>
         </form>
     </div>
     <div class="terms">
-        results: {{terms|length}}
+        <p><small>{{terms|length}} results</small></p>
+            {% regroup terms by term as regrouped_terms %}
 
-        <ul>
-            {% for term in terms %}
-                <li>
+            {% for term in regrouped_terms %}
+                <div class="term-card">
                     <ruby>
-                        {{term.term}} 
-                        <rt>{{term.reading}}</rt>
+                        {{term.grouper}}
+                        <rt>{{term.list.0.reading}}</rt>
                     </ruby>
                     
-                    acc: {{term.accuracy}}
-                    pop: {{term.popularity}}
-
-                    <ol>
-                        {% for definition in term.separated_definitions  %}
-                            <li>
-                                {{definition}}
-                            </li>
+                    <ul>
+                        {% for term in term.list %}
+                            {{term.accuracy}}
+                            {% for definition in term.separated_definitions %}
+                                <li>
+                                    {{definition}}
+                                </li>
+                            {% endfor %}
+                            
                         {% endfor %}
-                    </ol>
-                </li>
+                    </ul>
+                </div>
             {% endfor %}
-        </ul>
     </div>
 {% endblock content %}

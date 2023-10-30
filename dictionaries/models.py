@@ -25,6 +25,7 @@ class Term(models.Model):
     ruleIdentifiers = models.CharField(max_length=255)
     popularity = models.IntegerField()
     definitions = models.TextField() # JSON
+
     @property
     def separated_definitions(self):
         return json.loads(self.definitions)

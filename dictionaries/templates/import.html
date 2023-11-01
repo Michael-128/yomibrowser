@@ -6,10 +6,10 @@
         <a href="/import">import</a>
     </div>
     <div>
-        <form action="." method="POST">
+        <form action="." method="post" enctype="multipart/form-data">
             {% csrf_token %}
             <h2>Import Dictionary</h2>
-            <input type="file" name="" id="">
+            {{ dict_form.as_p }}
 
             <button class="submit-btn">Submit</button>
         </form>
